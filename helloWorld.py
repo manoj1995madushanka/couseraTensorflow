@@ -1,3 +1,5 @@
+# y = 2x - 1
+
 import tensorflow as tf
 # helps us to represent our data as lists easily and quickly
 import numpy as np
@@ -11,3 +13,7 @@ model.compile(optimizer='sgd', loss='mean_squared_error')
 # providing data
 xs = np.array([-1.0,0.0,1.0,2.0,3.0,4.0],dtype=float)
 ys = np.array([-3.0,-1.0,1.0,3.0,5.0,7.0],dtype=float)
+# training neural network
+model.fit(xs,ys,epochs=500)
+# figure out value for unknown x
+print(model.predict([10.0]))
